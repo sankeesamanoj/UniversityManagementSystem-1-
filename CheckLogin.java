@@ -33,16 +33,11 @@ public class CheckLogin {
                                             data[4],                
                                             data[5],                 
                                             data[6],                 
-                                            data[7] );                                    
-
+                                            data[7],
+                                            data[8] );                                    
                     return true;
                 }
-                else{
-                    reader.close();
-                    return false;
-                }
             }
-
             reader.close();
 
         } catch (IOException e) {

@@ -22,6 +22,8 @@ public abstract class Menu {
             if (checkLogin.checkLogin(userName, password)) {
                 Menu2.banner();
             }
+            else
+                System.out.println("Invalid user name or password");
         }else if (userOption == 3) {
             System.out.println();
             System.out.println("contact : ");
@@ -35,7 +37,7 @@ public abstract class Menu {
             return;
         }else
             System.out.println("Enter a valid input! ");
-
+        
     }
 
     

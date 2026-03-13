@@ -48,7 +48,17 @@ public class SignUp {
 // get age
     private int getAge(){
         System.out.print("Age: ");
-        return Input.scanner.nextInt();
+        int age;
+        while (true) {
+            age = Input.scanner.nextInt();
+        if (!(age<25 && age>5)) {
+            System.out.println("your age shoud be less than 25 gratter than 5");
+            System.out.println("you cann't register as student! ");
+        }
+        else{
+            return age;
+        } 
+    }
     }
 // get father name
     private String getFathername(){
@@ -63,19 +73,28 @@ public class SignUp {
     }
 // get email
     private String getEmail(){
-        System.out.print("Email: ");
-        return Input.scanner.next();
-
+        while (true) {
+            System.out.print("Email: ");
+        String email;
+        email =  Input.scanner.next();
+        if (!((email.contains("@")&&(email.contains("."))))) {
+            System.out.println("Enter a valid email address! ");
+        }
+        else{
+            return email;
+        }
+        }
     }
 // get address
     private String getAddress(){
         System.out.print("Address: ");
-        return  Input.scanner.nextLine();
+        return  Input.scanner.next();
     }
 
 // get the username
     private String userName(){
-        System.out.print("create a user-name: (min 8 characters and atleat a special symbol(only:! @ # $ % ^ & * { } - _): ");
+        while (true) {
+            System.out.print("create a user-name: (min 8 characters and atleat a special symbol(only:! @ # $ % ^ & * { } - _): ");
         String temp = Input.scanner.next();
         if ((temp.contains("!")||temp.contains("@")||temp.contains("#")||temp.contains("$")||
             temp.contains("%")||temp.contains("^")||temp.contains("&")||temp.contains("*")||
@@ -86,9 +105,8 @@ public class SignUp {
         else{
             System.out.println();
             System.out.println("User name should have min 8 characters and atleat a special symbol(only:! @ # $ % ^ & * { } - _\"");
-            userName();
         }
-        return null;
+        }
     } 
 
 // get the user password
@@ -98,21 +116,20 @@ public class SignUp {
         System.out.print("re-enter the password: ");
         String temp2 = Input.scanner.next();
 
-        if (!(temp.trim().equals(temp2))){
+        while (true) {
+            if (!(temp.trim().equals(temp2))){
             System.out.println("passwod did not match!");
-            savePassword();
         }else if(!(temp.contains("!")||temp.contains("@")||temp.contains("#")||temp.contains("$")||
             temp.contains("%")||temp.contains("^")||temp.contains("&")||temp.contains("*")||
             temp.contains("{")||temp.contains("}")||temp.contains("-")||temp.contains("_"))&&
             temp.length()<8) {
             System.out.println("User name should have min 8 characters and atleat a special symbol(only:! @ # $ % ^ & * { } - _\"");
-            savePassword();
         }else{
             System.out.println();
             System.out.println("paword saved successfully!");
             return temp.trim();
         }
-        return null;
+        }
     }
 
 // make a CSV file to save details
@@ -127,7 +144,7 @@ public class SignUp {
 
             // Write header only if file is new
             if (!fileExists) {
-                writer.write("FirstName,LastName,Age,FatherName,Phone number,Email,User Name,password\n");
+                writer.write("FirstName,LastName,Age,FatherName,Phone number,Email,User Name,password,address\n");
             }
 
             // Write student data

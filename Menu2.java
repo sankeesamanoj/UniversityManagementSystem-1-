@@ -8,11 +8,11 @@ public class Menu2 {
     static String email;
     static String userName;
     static String password;
-    // sstatic String address;
+    static String address;
 
     public Menu2(String firstName, String lastName, int age, String fatherName,
                    String phoneNumber, String email, String userName,
-                   String password) {
+                   String password,String address) {
 
         Menu2.firstName = firstName;
         Menu2.lastName = lastName;
@@ -22,6 +22,7 @@ public class Menu2 {
         Menu2.email = email;
         Menu2.userName = userName;
         Menu2.password = password;
+        Menu2.address = address;
     }
     
     static void banner(){
@@ -35,7 +36,9 @@ public class Menu2 {
         System.out.println();
         System.out.println("================================================");
         System.out.println(" ");
-
-    
+        printMenu2();
+    }
+    static void printMenu2(){
+        
     }
 }
