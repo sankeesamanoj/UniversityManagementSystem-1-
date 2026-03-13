@@ -146,7 +146,7 @@ public class SignUp {
             writer.close();
 
         } catch (IOException e) {
-            System.out.println("Error writing to file.");
+            System.out.println("Error in writing to file.");
         }
     }
 }
